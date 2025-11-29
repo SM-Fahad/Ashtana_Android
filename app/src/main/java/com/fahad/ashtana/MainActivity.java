@@ -45,19 +45,16 @@ public class MainActivity extends AppCompatActivity {
         bottomNavigation.setOnNavigationItemSelectedListener(item -> {
             Fragment selectedFragment = null;
 
-            switch (item.getItemId()) {
-                case R.id.nav_home:
-                    selectedFragment = homeFragment;
-                    break;
-                case R.id.nav_categories:
-                    selectedFragment = categoriesFragment;
-                    break;
-                case R.id.nav_cart:
-                    selectedFragment = cartFragment;
-                    break;
-                case R.id.nav_profile:
-                    selectedFragment = profileFragment;
-                    break;
+            int itemId = item.getItemId();
+
+            if (itemId == R.id.nav_home) {
+                selectedFragment = homeFragment;
+            } else if (itemId == R.id.nav_categories) {
+                selectedFragment = categoriesFragment;
+            } else if (itemId == R.id.nav_cart) {
+                selectedFragment = cartFragment;
+            } else if (itemId == R.id.nav_profile) {
+                selectedFragment = profileFragment;
             }
 
             if (selectedFragment != null) {
@@ -88,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
             tabForYou.setTypeface(tabForYou.getTypeface(), android.graphics.Typeface.NORMAL);
 
             // Load home content
-            // You can implement different content for HOME vs FOR YOU
+            loadFragment(homeFragment);
         } else {
             tabForYou.setTextColor(getResources().getColor(android.R.color.black));
             tabForYou.setTypeface(tabForYou.getTypeface(), android.graphics.Typeface.BOLD);
@@ -96,8 +93,9 @@ public class MainActivity extends AppCompatActivity {
             tabHome.setTextColor(getResources().getColor(android.R.color.darker_gray));
             tabHome.setTypeface(tabHome.getTypeface(), android.graphics.Typeface.NORMAL);
 
-            // Load "For You" content
-            // You can implement personalized recommendations here
+            // Load "For You" content - you can create a separate fragment for this
+            // For now, we'll use the same home fragment
+            loadFragment(homeFragment);
         }
     }
 

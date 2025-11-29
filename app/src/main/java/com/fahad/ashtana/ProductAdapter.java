@@ -43,13 +43,12 @@ public class ProductAdapter extends BaseAdapter {
         ViewHolder holder;
 
         if (convertView == null) {
-            convertView = inflater.inflate(R.layout.product_item, parent, false);
+            convertView = inflater.inflate(R.layout.activity_product_item, parent, false);
             holder = new ViewHolder();
             holder.productImage = convertView.findViewById(R.id.productImage);
             holder.productName = convertView.findViewById(R.id.productName);
             holder.originalPrice = convertView.findViewById(R.id.originalPrice);
             holder.discountedPrice = convertView.findViewById(R.id.discountedPrice);
-            holder.addToCartButton = convertView.findViewById(R.id.addToCartButton);
             convertView.setTag(holder);
         } else {
             holder = (ViewHolder) convertView.getTag();
@@ -62,14 +61,8 @@ public class ProductAdapter extends BaseAdapter {
         holder.originalPrice.setText(String.format("$%.2f", product.getOriginalPrice()));
         holder.discountedPrice.setText(String.format("$%.2f", product.getDiscountedPrice()));
 
-        holder.addToCartButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // For now, just show a toast
-                // Later you can implement cart functionality without authentication
-                Toast.makeText(context, product.getName() + " added to cart!", Toast.LENGTH_SHORT).show();
-            }
-        });
+        // Add strikethrough to original price
+        holder.originalPrice.setPaintFlags(holder.originalPrice.getPaintFlags() | android.graphics.Paint.STRIKE_THRU_TEXT_FLAG);
 
         return convertView;
     }
@@ -79,6 +72,5 @@ public class ProductAdapter extends BaseAdapter {
         TextView productName;
         TextView originalPrice;
         TextView discountedPrice;
-        Button addToCartButton;
     }
 }

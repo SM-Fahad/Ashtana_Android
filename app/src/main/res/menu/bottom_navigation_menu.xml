@@ -11,7 +11,7 @@
         android:title="Categories" />
 
     <item
-        android:id="@+id/nav_bag"
+        android:id="@+id/nav_cart"
         android:icon="@drawable/shopping_bag_24px"
         android:title="Bag" />
 

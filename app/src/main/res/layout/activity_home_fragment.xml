@@ -77,17 +77,15 @@
             android:textSize="16sp"
             android:textStyle="bold"
             android:padding="16dp"
-            android:paddingBottom="8px" />
+            android:paddingBottom="8dp" />
 
-        <GridView
+        <!-- FIXED GridView - Added proper height -->
+        <!-- Replace GridView with this -->
+        <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/productsGrid"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:numColumns="2"
-            android:verticalSpacing="16dp"
-            android:horizontalSpacing="16dp"
-            android:padding="16dp"
-            android:stretchMode="columnWidth" />
+            android:padding="16dp" />
 
     </LinearLayout>
 </ScrollView>
