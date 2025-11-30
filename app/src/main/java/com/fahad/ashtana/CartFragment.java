@@ -1,5 +1,6 @@
 package com.fahad.ashtana;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -45,14 +46,24 @@ public class CartFragment extends Fragment {
         checkoutButton = view.findViewById(R.id.checkoutButton);
         clearCartButton = view.findViewById(R.id.clearCartButton);
 
+//        checkoutButton.setOnClickListener(v -> {
+//            if (CartManager.getInstance().getCartItems().isEmpty()) {
+//                Toast.makeText(getContext(), "Your cart is empty", Toast.LENGTH_SHORT).show();
+//            } else {
+//                double total = CartManager.getInstance().getTotalPrice();
+//                Toast.makeText(getContext(), "Proceeding to checkout - Total: $" +
+//                        String.format("%.2f", total), Toast.LENGTH_SHORT).show();
+//                // Implement checkout logic
+//            }
+//        });
+
         checkoutButton.setOnClickListener(v -> {
             if (CartManager.getInstance().getCartItems().isEmpty()) {
                 Toast.makeText(getContext(), "Your cart is empty", Toast.LENGTH_SHORT).show();
             } else {
-                double total = CartManager.getInstance().getTotalPrice();
-                Toast.makeText(getContext(), "Proceeding to checkout - Total: $" +
-                        String.format("%.2f", total), Toast.LENGTH_SHORT).show();
-                // Implement checkout logic
+                // Navigate to CheckoutActivity
+                Intent intent = new Intent(getActivity(), CheckoutActivity.class);
+                startActivity(intent);
             }
         });
 

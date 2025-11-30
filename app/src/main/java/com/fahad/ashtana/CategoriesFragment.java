@@ -27,12 +27,12 @@ public class CategoriesFragment extends Fragment {
 
     private void initializeCategories() {
         categoryList = new ArrayList<>();
-        categoryList.add(new Category("Makeup", R.drawable.product1));
-        categoryList.add(new Category("Skincare", R.drawable.product2));
-        categoryList.add(new Category("Haircare", R.drawable.product3));
-        categoryList.add(new Category("Fragrance", R.drawable.product4));
-        categoryList.add(new Category("Tools", R.drawable.product5));
-        categoryList.add(new Category("Brushes", R.drawable.product6));
+        categoryList.add(new Category("Ring", R.drawable.product1));
+        categoryList.add(new Category("Earring", R.drawable.product2));
+        categoryList.add(new Category("Dress", R.drawable.product3));
+        categoryList.add(new Category("Necklace", R.drawable.product4));
+//        categoryList.add(new Category("Tools", R.drawable.product5));
+//        categoryList.add(new Category("Brushes", R.drawable.product6));
     }
 
     private void setupCategoriesGrid(View view) {
