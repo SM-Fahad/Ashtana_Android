@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- User Profile Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="16dp"
+            android:background="#FAFAFA"
+            android:layout_marginBottom="24dp">
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/account_circle_24px"
+                android:scaleType="centerInside"
+                android:background="#E0E0E0"
+                android:padding="16dp" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:paddingStart="16dp">
+
+                <TextView
+                    android:id="@+id/userName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Mohammad Fahad"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="#000000" />
+
+                <TextView
+                    android:id="@+id/userEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="fahad@ashtana.com"
+                    android:textSize="14sp"
+                    android:textColor="#666666"
+                    android:layout_marginTop="4dp" />
+
+                <TextView
+                    android:id="@+id/joinDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Member since January 2024"
+                    android:textSize="12sp"
+                    android:textColor="#999999"
+                    android:layout_marginTop="4dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Orders Section -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Order History"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:layout_marginBottom="16dp" />
+
+        <TextView
+            android:id="@+id/emptyOrders"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="No orders yet\n\nYour orders will appear here"
+            android:textSize="16sp"
+            android:textColor="#666666"
+            android:gravity="center"
+            android:padding="32dp"
+            android:visibility="gone" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/ordersRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+</ScrollView>
